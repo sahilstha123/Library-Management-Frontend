@@ -12,6 +12,7 @@ import {
 import { styled, alpha } from "@mui/material/styles"
 import Button from '@mui/material/Button';
 import { Link as RouterLink, useLocation } from "react-router-dom"
+import { useThemeContext } from '../../theme/ThemeContextProvider';
 
 const NavButton = styled(Button, {
     shouldForwardProp: (prop) => prop !== 'active',
@@ -37,7 +38,7 @@ const NavButton = styled(Button, {
     },
 
     '&:hover': {
-        backgroundColor: alpha(theme.palette.common.white, 0.05),
+        backgroundColor: alpha(theme.palette.primary.main, 0.08),
     },
 }));
 
@@ -68,7 +69,11 @@ const Header = () => {
 
     return (
         <>
-            <AppBar position='sticky'>
+            <AppBar position='sticky' elevation={0}
+                sx={{
+                    backgroundColor: "background.paper",
+                    backgroundImage: "none",
+                }}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters sx={{ height: 70 }}>
                         {/* Logo */}
@@ -98,36 +103,41 @@ const Header = () => {
                                 <LibraryIcon />
                             </Box>
                             <Box component="span" sx={{
-                                display:{xs:"none", lg:"block"}
+                                display: { xs: "none", lg: "block" }
                             }}>LMS</Box>
 
                         </Typography>
-                        
+
                         {/* Desktop Navigation */}
                         <Box
-                        sx={{
-                            display:{xs:"none", md:"flex"},
-                            alignItems: "center",
-                            gap:1
-                        }}
+                            sx={{
+                                display: { xs: "none", md: "flex" },
+                                alignItems: "center",
+                                gap: 1
+                            }}
                         >
-                            {navItems.map((item)=>(
+                            {navItems.map((item) => (
                                 <NavButton
-                                key={item.label}
-                                component = {RouterLink}
-                                to={item.path}
+                                    key={item.label}
+                                    component={RouterLink}
+                                    to={item.path}
                                 >{item.label}</NavButton>
                             ))}
                             <Divider
-                            orientation='vertical'
-                            flexItem
-                            sx={{mx:2, height:60, my:"auto", borderColor: alpha("#ffffff",0.1)}}
+                                orientation="vertical"
+                                flexItem
+                                sx={{
+                                    mx: 2,
+                                    height: 60,
+                                    my: "auto",
+                                    borderColor: "divider",
+                                }}
                             />
                             <IconButton
-                            onClick={toggleTheme}
-                            color='inherit'
-                            sx={{mr:1}}
-                            >{mode ==="dark"? <LightMode/> : <DarkMode/>}</IconButton>
+                                onClick={toggleTheme}
+                                color='inherit'
+                                sx={{ mr: 1 }}
+                            >{mode === "dark" ? <LightMode /> : <DarkMode />}</IconButton>
                         </Box>
                     </Toolbar>
                 </Container>

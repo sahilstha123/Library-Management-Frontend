@@ -1,5 +1,6 @@
 import { CssBaseline, PaletteMode, ThemeProvider } from '@mui/material';
 import React, {  createContext, ReactNode, useContext, useMemo, useState } from 'react'
+import { getTheme } from './theme';
 
 
 interface ThemeContextType {
@@ -18,7 +19,7 @@ export const useThemeContext = ()=>{
   }
   return context
 }
-export const ThemeContextProvider = ({children}:ThemeContextProviderType) => {
+ const ThemeContextProvider = ({children}:ThemeContextProviderType) => {
   const [mode, setMode] = useState<PaletteMode>(()=>{
     const saveMode = localStorage.getItem("themeMode");
     if(saveMode === "light" || saveMode === "dark")
@@ -46,4 +47,4 @@ export const ThemeContextProvider = ({children}:ThemeContextProviderType) => {
     </ThemeContext.Provider>
   )
 }
-
+export default ThemeContextProvider
