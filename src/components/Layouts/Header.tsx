@@ -96,8 +96,8 @@ const Header = () => {
                                     display: "flex",
                                     p: 1,
                                     borderRadius: 2,
-                                    backgroundColor: alpha("#f5c462", 0.15),
-                                    color: "#f5c462"
+                                    backgroundColor: alpha("#1877F2", 0.15),
+                                    color: "#1877F2"
                                 }}
                             >
                                 <LibraryIcon />

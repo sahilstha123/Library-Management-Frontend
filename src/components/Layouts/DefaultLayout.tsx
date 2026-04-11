@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import Header from './Header'
 import Footer from './Footer'
-
+import Box from "@mui/material/Box"
 interface DefaultLayoutProps {
   children: ReactNode;
 }
@@ -11,9 +11,9 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
     <div>
       <Header />
 
-      <main>
+      <Box component= "main" sx={{minHeight: "80vh"}}>
         {children}
-      </main>
+      </Box>
       <Footer />
     </div>
   )

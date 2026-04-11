@@ -1,6 +1,6 @@
 import {PaletteMode, alpha, createTheme} from "@mui/material"
 const emerald = "#0a5cda";
-const gold = "#f5c462"
+const darkBlue = "#1877F2"
 const navy = "#0F1114"
 
 export const getTheme = (mode: PaletteMode) =>{
@@ -12,7 +12,7 @@ export const getTheme = (mode: PaletteMode) =>{
                 contrastText: '#ffffff',
             },
             secondary:{
-                main: gold,
+                main: darkBlue,
             },
             background:{
                 default: mode === "light" ? "#f8fafc" : navy,
@@ -42,7 +42,23 @@ export const getTheme = (mode: PaletteMode) =>{
                         backdropFilter: "blur(12px)",
                         color: mode === "light" ? emerald : "#ffffff",
                         boxShadow: "none",
-
+                        borderBottom: `1px solid ${mode === "light" ? alpha(emerald, 0.1): alpha("#ffffff",0.1)}`
+                    }
+                }
+            },
+            MuiButton:{
+                styleOverrides: {
+                    root : {
+                        borderRadius: 12,
+                        padding: "8px 16px"
+                    }
+                }
+            },
+            MuiDrawer:{
+                styleOverrides:{
+                    paper:{
+                            backgroundColor: mode === "light" ? "#ffffff" : navy,
+                            backgroundImage: "none"
                     }
                 }
             }
