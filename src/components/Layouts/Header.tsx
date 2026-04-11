@@ -5,9 +5,12 @@ import {
     Home as HomeIcon,
     Dashboard as DashboardIcon,
     LocalLibrary as LibraryIcon,
+    Login,
+    PersonAdd as LogOut,
     Mode,
     LightMode,
-    DarkMode
+    DarkMode,
+    
 } from "@mui/icons-material"
 import { styled, alpha } from "@mui/material/styles"
 import Button from '@mui/material/Button';
@@ -43,8 +46,9 @@ const NavButton = styled(Button, {
 }));
 
 const navItems = [
-    { label: "Home", path: "/", icon: <HomeIcon /> },
-    { label: "Dashboard", path: "/user", icon: <DashboardIcon /> }
+    { label: "Home", path: "/", icon: <HomeIcon fontSize='small'/> },
+    { label: "Sign Up", path: "/signup", icon: <LogOut fontSize='small' /> },
+    { label: "Login", path: "/", icon: <Login /> }
 ]
 const Header = () => {
     const [mobileOpen, setMobileOpen] = useState(false)
@@ -113,7 +117,8 @@ const Header = () => {
                             sx={{
                                 display: { xs: "none", md: "flex" },
                                 alignItems: "center",
-                                gap: 1
+                                gap: 1,
+                                marginLeft: "auto"
                             }}
                         >
                             {navItems.map((item) => (
@@ -121,7 +126,7 @@ const Header = () => {
                                     key={item.label}
                                     component={RouterLink}
                                     to={item.path}
-                                >{item.label}</NavButton>
+                                >{item.icon} {item.label}</NavButton>
                             ))}
                             <Divider
                                 orientation="vertical"

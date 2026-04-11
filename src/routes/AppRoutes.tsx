@@ -9,12 +9,10 @@ const AppRoutes = () => {
 
     <Routes>
       {/* public pages */}
-      <Route path="/" element={
-        <DefaultLayout>
-          <HomePage />
-        </DefaultLayout>
-      } />
 
+      <Route path="/" element={<DefaultLayout />}>
+        <Route index element={<HomePage />} />
+      </Route>
       {/* private pages */}
       <Route path="/user" element={<DashboardPage />} />
 

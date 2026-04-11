@@ -2,17 +2,16 @@ import React, { ReactNode } from 'react';
 import Header from './Header'
 import Footer from './Footer'
 import Box from "@mui/material/Box"
-interface DefaultLayoutProps {
-  children: ReactNode;
-}
+import { Outlet } from 'react-router-dom';
 
-const DefaultLayout = ({ children }: DefaultLayoutProps) => {
+
+const DefaultLayout = () => {
   return (
     <div>
       <Header />
 
       <Box component= "main" sx={{minHeight: "80vh"}}>
-        {children}
+       <Outlet/>
       </Box>
       <Footer />
     </div>
