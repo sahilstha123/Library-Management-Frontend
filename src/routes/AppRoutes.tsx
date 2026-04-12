@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { DashboardPage, HomePage } from '../pages/index'
+import { DashboardPage, HomePage, SignUpPage, SignInPage } from '../pages'
 import DefaultLayout from '../components/Layouts/DefaultLayout'
 
 
@@ -12,6 +12,8 @@ const AppRoutes = () => {
 
       <Route path="/" element={<DefaultLayout />}>
         <Route index element={<HomePage />} />
+        <Route path="signup" element={<SignUpPage />} />
+        <Route path="signin" element={<SignInPage />} />
       </Route>
       {/* private pages */}
       <Route path="/user" element={<DashboardPage />} />

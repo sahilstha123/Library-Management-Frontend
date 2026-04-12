@@ -97,7 +97,7 @@ const ElevatedAppBar = styled(AppBar, {
 const navItems = [
     { label: 'Home', path: '/', icon: <HomeIcon fontSize="small" /> },
     { label: 'Sign Up', path: '/signup', icon: <SignUpIcon fontSize="small" /> },
-    { label: 'Login', path: '/login', icon: <LoginIcon fontSize="small" /> },
+    { label: 'Login', path: '/signin', icon: <LoginIcon fontSize="small" /> },
 ];
 
 const Header = () => {
