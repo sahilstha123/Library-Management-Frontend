@@ -1,8 +1,14 @@
 import React from 'react'
+import { Typography, Paper, Grid, Box } from '@mui/material'
 
 const DashboardPage = () => {
   return (
-    <div>DashboardPage</div>
+    <Box>
+      <Typography variant="h4" gutterBottom>
+        Dashboard
+      </Typography>
+     
+    </Box>
   )
 }
 

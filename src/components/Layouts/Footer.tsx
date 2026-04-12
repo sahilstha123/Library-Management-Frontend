@@ -28,7 +28,7 @@ const Footer = () => {
       sx={{
         backgroundColor: isLight ? "#ffffff" : theme.palette.background.paper,
         color: theme.palette.text.secondary,
-        pt: { xs: 8, md: 10 },
+        pt: { xs: 4, md: 6 },
         pb: 4,
         borderTop: `1px solid ${isLight ? alpha(theme.palette.primary.main, 0.08) : alpha("#ffffff", 0.09)}`,
         position: 'relative'
