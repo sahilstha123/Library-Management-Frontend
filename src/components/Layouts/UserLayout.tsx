@@ -1,9 +1,10 @@
 import React from 'react'
-import { Container, Grid, Box, Typography, useTheme } from "@mui/material";
+import { Container, Grid, Box, Typography, useTheme, Divider, alpha } from "@mui/material";
 import Header from "./Header"
 import Footer from "./Footer"
 import { Outlet } from 'react-router-dom';
 import { navy } from '../../theme/theme';
+import SideBar from './SideBar';
 
 
 const UserLayout = () => {
@@ -13,19 +14,21 @@ const UserLayout = () => {
         <Box>
             <Box sx={{ minHeight: "100vh", display: 'flex', flexDirection: 'column' }}>
                 <Header />
-                <Box sx={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
+                <Box sx={{ display: 'flex', flex: 1, overflow: 'hidden', }}>
                     {/* left sidebar */}
                     <Box
                         sx={{
-                            width: { xs: "125px", md: "250px" },
+                            width: { xs: "200px", md: "280px" },
                             bgcolor: isLight ? "#ffffff" : navy,
                             color: isLight ? navy : "#f8fafc",
                             borderRight: `1px solid ${theme.palette.divider}`
                         }}
                     >
+                        <SideBar />
 
-                        leftSide
                     </Box>
+
+                   
                     {/* Right side */}
                     <Box
                         component="main"
@@ -35,7 +38,7 @@ const UserLayout = () => {
                             p: 3,
                             overflow: "auto",
                             color: isLight ? navy : "#f8fafc",
-                            
+
 
                         }}
                     >

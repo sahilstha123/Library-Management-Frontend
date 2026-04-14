@@ -34,7 +34,7 @@ import { useThemeContext } from '../../theme/ThemeContextProvider';
 
 const NavButton = styled(Button, {
     shouldForwardProp: (prop) => prop !== 'active',
-})<{ active?: boolean }>(({ theme, active }) => ({
+})<{ active?: boolean; component?: React.ElementType; to?: string }>(({ theme, active }) => ({
     color: 'inherit',
     position: 'relative',
     padding: '10px 22px',
@@ -43,7 +43,7 @@ const NavButton = styled(Button, {
     fontWeight: 600,
     fontSize: '0.95rem',
     minWidth: 'auto',
-    backgroundColor: 'transparent',           
+    backgroundColor: 'transparent',
 
     // Disable ALL default Button hover/focus backgrounds
     '&:hover': {
@@ -291,10 +291,14 @@ const Header = () => {
                                         {item.icon}
                                     </ListItemIcon>
                                     <ListItemText
-                                        primary={item.label}
-                                        primaryTypographyProps={{
-                                            fontWeight: isActive(item.path) ? 600 : 500,
-                                        }}
+                                        primary={
+                                            <Typography sx={{
+                                                fontWeight: isActive(item.path) ? 600 : 500,
+                                                color: isActive(item.path) ? 'primary.main' : 'text.secondary'
+                                            }}>
+                                                {item.label}
+                                            </Typography>
+                                        }
                                     />
                                 </ListItemButton>
                             </ListItem>

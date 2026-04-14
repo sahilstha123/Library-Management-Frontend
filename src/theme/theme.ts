@@ -1,7 +1,8 @@
-import { PaletteMode, alpha, createTheme } from "@mui/material"
+import { PaletteMode, alpha, createTheme } from "@mui/material";
+
 const emerald = "#0a5cda";
-const darkBlue = "#1877F2"
-export const navy = "#0F1114"
+const darkBlue = "#1877F2";
+export const navy = "#0F1114";
 
 export const getTheme = (mode: PaletteMode) => {
     return createTheme({
@@ -22,6 +23,9 @@ export const getTheme = (mode: PaletteMode) => {
                 primary: mode === "light" ? "#1e293b" : "#f8fafc",
                 secondary: mode === "light" ? "#64748b" : "#94a3b8",
             },
+            divider: mode === "light" 
+                ? alpha("#000000", 0.12) 
+                : alpha("#ffffff", 0.12),   
         },
         typography: {
             fontFamily: '"Outfit", "Plus Jakarta Sans", sans-serif',
@@ -63,5 +67,5 @@ export const getTheme = (mode: PaletteMode) => {
                 }
             }
         }
-    })
-}
+    });
+};
