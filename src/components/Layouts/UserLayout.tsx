@@ -24,11 +24,16 @@ const UserLayout = () => {
                             borderRight: `1px solid ${theme.palette.divider}`
                         }}
                     >
+                        <Box>
+                            <Typography>Welcome Back</Typography>
+                            <Typography>Sahil Shrestha</Typography>
+                            <Divider sx={{ py: 1, mx: 1, opacity: 0.6 }} />
+                        </Box>
                         <SideBar />
 
                     </Box>
 
-                   
+
                     {/* Right side */}
                     <Box
                         component="main"

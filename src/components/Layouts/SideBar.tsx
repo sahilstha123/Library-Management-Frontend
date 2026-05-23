@@ -27,11 +27,7 @@ const SideBar = () => {
     }
     return (
         <Box>
-            <Box>
-                <Typography>Welcome Back</Typography>
-                <Typography>Sahil Shrestha</Typography>
-                <Divider sx={{ py:1 ,mx:1 , opacity: 0.6 }} />
-            </Box>
+
         </Box>
     )
 }
