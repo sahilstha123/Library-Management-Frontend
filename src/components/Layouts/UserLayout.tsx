@@ -11,47 +11,56 @@ const UserLayout = () => {
     const theme = useTheme()
     const isLight = theme.palette.mode === "light"
     return (
-        <Box>
-            <Box sx={{ minHeight: "100vh", display: 'flex', flexDirection: 'column' }}>
-                <Header />
-                <Box sx={{ display: 'flex', flex: 1, overflow: 'hidden', }}>
-                    {/* left sidebar */}
-                    <Box
-                        sx={{
-                            width: { xs: "200px", md: "280px" },
-                            bgcolor: isLight ? "#ffffff" : navy,
-                            color: isLight ? navy : "#f8fafc",
-                            borderRight: `1px solid ${theme.palette.divider}`
-                        }}
-                    >
-                        <Box>
-                            <Typography>Welcome Back</Typography>
-                            <Typography>Sahil Shrestha</Typography>
-                            <Divider sx={{ py: 1, mx: 1, opacity: 0.6 }} />
-                        </Box>
-                        <SideBar />
-
-                    </Box>
-
-
-                    {/* Right side */}
-                    <Box
-                        component="main"
-                        sx={{
-                            flex: 1,
-                            bgcolor: isLight ? "#ffffff" : navy,
-                            p: 3,
-                            overflow: "auto",
-                            color: isLight ? navy : "#f8fafc",
-
-
-                        }}
-                    >
-                        <Outlet />
-                    </Box>
+        <Box sx={{ display: "flex", minHeight: "100vh", bgcolor: "background.default" }}>
+            {/* sidebar container */}
+            <Box
+                component="nav"
+                sx={{
+                    width: { xs: "240px", md: "280px" },
+                    flexShrink: 0,
+                    bgcolor: "background.paper",
+                    borderRight: `1px solid ${theme.palette.divider}`,
+                    display: "flex",
+                    flexDirection: "column"
+                }}
+            >
+                <Box sx={{ p: 3, textAlign: "center" }}>
+                    <Typography variant='subtitle2' sx={{ color: "text.secondary", fontWeight: 600 }}>
+                        Welcome Back
+                    </Typography>
+                    <Typography variant='h6' sx={{ color: "text.primary", fontWeight: 800 }}>
+                        Sahil Shrestha
+                    </Typography>
+                    <Divider sx={{ mt: 2, opacity: 0.6 }} />
                 </Box>
+                <SideBar />
             </Box>
-            <Footer />
+
+            {/* Main content Area */}
+            <Box
+            sx={{
+                flexGrow:1,
+                display: "flex",
+                flexDirection:'column',
+                minWidth:0
+            }}
+            >
+                <Header/>
+                <Box
+                component="main"
+                sx={{
+                    flexGrow: 1,
+                    p: {xs:2, md:4},
+                    bgcolor: 'background.default',
+                    color: "text.primary",
+                    overflow: "auto"
+
+                }}
+                >
+                    <Outlet/>
+                </Box>
+                <Footer/>
+            </Box>
         </Box>
     )
 }
