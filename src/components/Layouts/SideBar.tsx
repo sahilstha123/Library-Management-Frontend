@@ -13,13 +13,14 @@ const SideBar = () => {
 
     const location = useLocation()
     const sideBarItems = [
-        { label: "Dashboard", path: "/user", icon: <DashboardIcon fontSize='small' /> },
+        { label: "Dashboard", path: "/user/dashboard", icon: <DashboardIcon fontSize='small' /> },
         { label: "Book", path: "/user/books", icon: <BookIcon fontSize='small' /> },
         { label: "All Users", path: "/user/user-lists", icon: <UserIcon fontSize='small' /> },
         { label: "Borrow History", path: "/user/borrow", icon: <HistoryIcon fontSize='small' /> },
         { label: "Profile", path: "/user/profile", icon: <ProfileIcon fontSize='small' /> },
 
     ]
+
     const isActive = (path: string): boolean => {
         if (path === "/user") {
             return location.pathname === '/user' || location.pathname === '/user/dashboard';
@@ -55,21 +56,21 @@ const SideBar = () => {
                                 }
                             }}
                         >
-                            <ListItemIcon sx={{ minWidth:40, color: isActive(item.path)? "primary.main": "inherit"}}>
+                            <ListItemIcon sx={{ minWidth: 40, color: isActive(item.path) ? "primary.main" : "inherit" }}>
                                 {item.icon}
                             </ListItemIcon>
                             <ListItemText
-                            primary={
+                                primary={
                                     <Typography sx={{
                                         fontWeight: isActive(item.path) ? 700 : 500,
                                         fontSize: "0.9rem"
 
                                     }}>
-                                    {item.label}
-                                </Typography>
-                            }
+                                        {item.label}
+                                    </Typography>
+                                }
                             >
-                                
+
                             </ListItemText>
                         </ListItemButton>
                     </ListItem>
