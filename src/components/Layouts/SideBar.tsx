@@ -15,7 +15,8 @@ const SideBar = () => {
     const sideBarItems = [
         { label: "Dashboard", path: "/user/dashboard", icon: <DashboardIcon fontSize='small' /> },
         { label: "Book", path: "/user/books", icon: <BookIcon fontSize='small' /> },
-        { label: "All Users", path: "/user/user-lists", icon: <UserIcon fontSize='small' /> },
+        { label: "All Users", path: "/user/all", icon: <UserIcon fontSize='small' /> },
+        {label: "Reviews", path:"/user/reviews",},
         { label: "Borrow History", path: "/user/borrow", icon: <HistoryIcon fontSize='small' /> },
         { label: "Profile", path: "/user/profile", icon: <ProfileIcon fontSize='small' /> },
 
