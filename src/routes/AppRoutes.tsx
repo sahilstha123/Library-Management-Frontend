@@ -12,7 +12,8 @@ import {
   ReviewsPage,
   UserPage,
   Profile,
-  ForgetPassword
+  ForgetPassword,
+  BorrowPage
 } from '../pages'
 import { DefaultLayout, UserLayout } from '../components/Layouts'
 import { Navigate } from 'react-router-dom'
@@ -37,6 +38,7 @@ const AppRoutes = () => {
         <Route path="books" element={<Books />} />
         <Route path="new-book" element = {<NewBookPage/>}/>
         <Route path = "edit-book" element = {<EditBookPage/>}/>
+        <Route path = "borrow-history" element = {<BorrowPage/>}/>
         <Route path="book-landing" element={<BookLandingPage />} />
         <Route path="reviews" element = {<ReviewsPage/>}/>
         <Route path="all" element={<UserPage />} />

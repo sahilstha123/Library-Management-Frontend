@@ -5,12 +5,14 @@ import Footer from "./Footer"
 import { Outlet } from 'react-router-dom';
 import { navy } from '../../theme/theme';
 import SideBar from './SideBar';
+import AuthRoute from './auth/AuthRoute';
 
 
 const UserLayout = () => {
     const theme = useTheme()
     const isLight = theme.palette.mode === "light"
     return (
+        <AuthRoute>
         <Box sx={{ display: "flex", minHeight: "100vh", bgcolor: "background.default" }}>
             {/* sidebar container */}
             <Box
@@ -62,6 +64,7 @@ const UserLayout = () => {
                 <Footer/>
             </Box>
         </Box>
+        </AuthRoute>
     )
 }
 
